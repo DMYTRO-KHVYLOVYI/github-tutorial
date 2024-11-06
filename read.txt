@@ -1,2 +1,13 @@
 deploy  - доставка сайту на сервер
 для хостингу Index.html повинен бути в корені папки
+
+web devoleper це стек:
+word press + php
+
+front devoleper це:
+html
+JS
+frame work
+node
+
+system font stack

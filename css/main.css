@@ -5,6 +5,87 @@
 /* акцент #18A0FB */
 /* вторичный цвет фона #F5F5F5; */
 
+:root {
+  --primary-text-color: rgba(0, 0, 0, 0.8);
+  --title-text-color: #000000;
+  --accent-color: #18a0fb;
+  --primary-white-color: #ffffff;
+}
+
+body {
+  background-color: var(--primary-white-color);
+  color: var(--primary-text-color);
+
+  /* Після основногу шрифту обов'язково написати
+  сімейство шрифтів на випадок (інтернет відвалився,
+  файлікі не прийшли, шрифт не завантажився). Потрібно
+  обрати будь-який котрий є на системі користувача 
+  (без "засєчєк") sans-serif це універсальне запасне
+  сімейство шрифтів */
+  /*  Sans serif "без засєчєк"
+      serif      "с засєчкамі"
+      mono (mono space)  "коли потрібно описати код"
+      обирати відповідно до основного (без, с, mono)   
+      */
+      /* Щоб зрозуміти якого типу шрифт можна або загуглити 
+      або подивитись у зумі на шрифт. На ньому буквально видно
+       засєчкі (Roman font) шрифт без засєчєк ще називають "рублений" */
+  font-family: Montserrat, sans-serif;
+  letter-spacing: -0.015em;
+  font-size: 18px;
+  line-height: 1.67;
+
+  /* Наступним чином можна змінити всі або просто
+  потрібні заголовки. Називається "Типографія" */
+  
+  /* h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Comfortaa;
+  } */
+}
+
+/* Logo */
+
+.logo {
+  color: var(--title-text-color);
+  /* Як і минулому випадку додадково додаємо сімейство шрифтів
+  на випадок збою роботи сайту
+    Comfortaa шрифт курсівний тож додаємо сімейство cursive  */
+  font-family: Comfortaa, cursive;
+
+  font-size: 28px;
+  line-height: 1.14;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--accent-color);
+}
+
+/* Site nav */
+
+.site-nav .link {
+  color: var(--accent-color);
+
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: var(--title-text-color);
+}
+
+.site-nav .link.current {
+  color: var(--title-text-color);
+}
+
 .list {
   list-style: none;
 }
@@ -13,24 +94,37 @@
 
 .hero-title {
   color: var(--title-text-color);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.43;
+  text-align: center;
 }
 
 /* Section */
 
 .section-title {
   color: var(--title-text-color);
+
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.5;
+  text-align: center;
 }
 
-/* Features */
-
-.feature-list .title {
-  color: var(--title-text-color);
+.section-description {
+  font-size: 36px;
+  line-height: 1.39;
 }
 
-/* Examples */
+/* Features и Examples */
 
+.feature-list .title,
 .work-list .title {
   color: var(--title-text-color);
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.5;
 }
 
 /* Button */
@@ -38,6 +132,11 @@
 .button {
   color: var(--title-text-color);
   background-color: var(--primary-white-color);
+
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
 }
 
 .button.primary {

@@ -82,6 +82,8 @@ body {
   32/28    line-height/font-size */
   line-height: 1.14;
   text-decoration: none;
+  /* text-decoration: none; прибирає базове підкреслення посилань
+  (лише посилань)  */
 }
 
 .logo:hover {
@@ -218,4 +220,15 @@ ul {
   background-color: var(--primary-white-color);
 }
 
+/* Footer */
+
+.copyright {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.social > .label {
+  font-size: 15px;
+  line-height: 1.6;
+}
 

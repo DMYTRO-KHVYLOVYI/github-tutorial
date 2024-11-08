@@ -17,6 +17,7 @@
   <body>
     <!-- Шапка сайта -->
     <header>
+      <!-- <nav> Головна навігація по сайту-->
       <nav>
         <a href="./index.html" class="logo">
           <img src="/image/Anime600x400.jpg" alt="Логотип компании" />
@@ -37,8 +38,11 @@
       </nav>
     </header>
 
+    <!-- <main> Унікальний контент сторінки.
+       Тобто те, що між header (шапка) ta footer(підвал) УРОК 1-->
     <main>
       <!-- Герой -->
+      <!--Герой (те що першим кидається в очі. Банер, відео ...)-->
       <section class="hero">
         <h1 class="hero-title">The largest community of photo enthusiasts</h1>
         <a href="" class="button primary">Join today</a>
@@ -92,6 +96,7 @@
 
       <!-- Примеры работ -->
       <section class="section">
+        <!--class="section" тут не обов'язковий, але потрібен для розуміння  -->
         <h2 class="section-title">Examples</h2>
 
         <ul class="work-list">
@@ -176,6 +181,9 @@
         </p>
 
         <!-- я не джин 🐷 -->
+        <!-- Вчитель загорнув це в div бо він знає, що це посилання та кнопка
+        тобто це не однотипний контент -->
+        <!-- Як я можу помітити li тут не потрібен -->
         <div>
           <a href="" class="button primary">Join Today</a>
           <a href="" class="button secondary">Contact us</a>
@@ -184,7 +192,7 @@
     </main>
 
     <!-- Футер -->
-    <footer>
+    <!-- <footer>
       <ul>
         <li><a href="">Mobile app</a></li>
         <li><a href="">Community</a></li>
@@ -207,9 +215,72 @@
         <li><a href="" aria-label="Ссылка на Twitter">Twitter</a></li>
         <li><a href="" aria-label="Ссылка на Instagram">Instagram</a></li>
         <li><a href="" aria-label="Ссылка на LinkedIn">LinkedIn</a></li>
+      </ul> -->
+
+    <!-- Тег aria-label використовуєьбся для індексації щоб машина могла прочитати опис посилання.
+      Тобто ссилкою буде СВГ картинка, а це її опис для індексації. -->
+    <!-- В майбутньому "текст-посилання" буде замінений на СВГ іконки які не мають сематичного значення. -->
+    <!-- aria-label може взаемодіяти з будь-яким тегом -->
+
+    <!-- <p>&#169; Photo, Inc. 2019. We love our users!</p> -->
+
+    <!-- &#169 це символ, правильний код символів є спец. сайтах в закладках -->
+
+    <!-- <table> - &lt;table&gt; -->
+    <!-- <p>&#169;Photo inc 2019 <span class="accent">we love you!<span/></p>
+      <span> потрібен для виділення частина тексту для майбутньої стилізації -->
+
+    <!-- </footer> -->
+
+    <!-- Новий Футер -->
+    <footer class="page-footer">
+      <a href="./index.html" class="logo">
+        <img src="./images/logo.svg" alt="Логотип компании" />
+        photo
+      </a>
+
+      <section>
+        <h2>External links</h2>
+
+        <h3>Mobile app</h3>
+        <ul class="list">
+          <li><a href="">Features</a></li>
+          <li><a href="">Live share</a></li>
+          <li><a href="">Video record</a></li>
+        </ul>
+
+        <h3>Community</h3>
+        <ul class="list">
+          <li><a href="">Featured artists</a></li>
+          <li><a href="">The Portal</a></li>
+          <li><a href="">Live events</a></li>
+        </ul>
+
+        <h3>Company</h3>
+        <ul class="list">
+          <li><a href="">About us</a></li>
+          <li><a href="">Contact us</a></li>
+          <li><a href="">History</a></li>
+        </ul>
+      </section>
+
+      <ul class="auth-nav list">
+        <li><a href="" class="button secondary">Register</a></li>
+        <li><a href="" class="button primary">Log in</a></li>
       </ul>
 
-      <p>&#169; Photo, Inc. 2019. We love our users!</p>
+      <p class="copyright">&#169; Photo, Inc. 2019. We love our users!</p>
+
+      <div class="social">
+        <p class="label">Follow span:</p>
+
+        <ul class="list">
+          <li><a href="" aria-label="Ссылка на Facebook">Facebook</a></li>
+          <li><a href="" aria-label="Ссылка на Twitter">Twitter</a></li>
+          <li><a href="" aria-label="Ссылка на Instagram">Instagram</a></li>
+          <li><a href="" aria-label="Ссылка на LinkedIn">LinkedIn</a></li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>

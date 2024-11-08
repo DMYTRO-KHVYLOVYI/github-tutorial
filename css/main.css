@@ -1,3 +1,9 @@
+ /* УЗАГАЛЬНЕННЯ
+ якщо у нас є щось однакове по зовнішньому виду, але
+ розрізняється за дрібними модифікаціями то використовується
+ "базовий стиль" + "додатковий" який його модифікує
+ (перевизначає або доповнює базовий стиль) */
+
 /* цвет основного текста #000000 */
 /* вторичный цвет текста  rgba(0, 0, 0, 0.8);
  */
@@ -108,9 +114,40 @@ font-family: inherit;
   color: var(--title-text-color);
 }
 
+/* Ми робимо селектор важкішим (спеціальність 0.0.2.0) для того щоб на поточній
+сторінці слово-посилання було чорним перманентно */
+/* "Ефект поточної сторінки" */
+/* CSS файл піднаєднали до обох HTMLок (сторінок сайту) */
 .site-nav .link.current {
   color: var(--title-text-color);
 }
+
+/* Index html */
+/* <ul class="site-nav list">
+          <li><a href="" class="link current">Features</a></li>
+          <li><a href="" class="link">Preing</a></li>
+          <li><a href="/Community.html" class="link">Community</a></li>
+          <li><a href="" class="link">Support</a></li>
+        </ul> */
+
+/* HTML Community */
+/* <ul class="site-nav list">
+          <li><a href="" class="link">Features</a></li>
+          <li><a href="" class="link">Preing</a></li>
+          <li><a href="/Community.html" class="link current">Community</a></li>
+          <li><a href="" class="link">Support</a></li>
+        </ul> */
+
+
+/* 
+
+ul {
+    list-style: none;
+}
+
+ цим варіантом можна знести стиль сторінки (крапочки)
+ з усіх ul елементів та у разі небхіодності додавати окремо,
+ але наступний варіант більш гнучкий */
 
 .list {
   list-style: none;
@@ -180,3 +217,5 @@ font-family: inherit;
   color: var(--accent-color);
   background-color: var(--primary-white-color);
 }
+
+

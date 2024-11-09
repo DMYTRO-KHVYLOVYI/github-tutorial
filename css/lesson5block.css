@@ -1,6 +1,23 @@
+/* box-sizing встанволює тип блочної моделі */
+/* content-box - застрів та є тільки на дуже старих сайтах */
+/* (включає в свою геометрію лише content) */
+/* border-box - актуальна блочна модель (включає в свою геометрію) */
+/* content + padding + border */
+/* Наступні параметри пишуться завжди: */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after *::before {
+  box-sizing: inherit;
+}
+
+/* у body є базовий від браузера margin котрий завжди треба прибирати */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /* .box { */
@@ -81,22 +98,58 @@ body {
 /* Margin можна пожититись в стилях incept */
 
 .btn {
-    display: inline-block;
-    /* display: inline-block; додаєм бо <a> строчний елемент */
-    /* Щоб надати йому можливості геометрії */
-    /* padding спочатку вертикальний, а потім горизонтальний */
-    /* В padding заливається background-color */
-    padding: 20px 40px;
-    background-color: tomato;
-    color: white;
-    border: 2px solid black;
-    border-radius: 3px;
-    text-decoration: none;
-    /* прибрали підкреслювання */
-  }
+  display: inline-block;
+  /* display: inline-block; додаєм бо <a> строчний елемент */
+  /* Щоб надати йому можливості геометрії */
+  /* padding спочатку вертикальний, а потім горизонтальний */
+  /* В padding заливається background-color */
+  padding: 20px 40px;
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  text-decoration: none;
+  /* прибрали підкреслювання */
+}
 
-  .btn:hover, .btn:focus{
+/* .btn:hover, .btn:focus{
     background-color: blue;
     color: white;
     border-color: yellow;
-  }
+  } */
+
+.btn-icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+  background-color: blue;
+  vertical-align: middle;
+  /* botton top ще є такі варіанти, але я поки не розумію.
+    Притискається по висоті гайвищого елементу до низу або до верху
+    що це значить не єбу. Вчитель каже, що по низу та верху майже ніколи не центрується*/
+  /* ця властивість працює лиша на строкові елементи та inline-block */
+  /* таким чином ми центрували span елемент відносно тексту-посилання */
+}
+
+/* приклад центрування */
+.box {
+  width: 500px;
+  height: 100px;
+  background-color: blueviolet;
+  /* Зробивши лівий та правий margin автоматичними ми центрували
+    блок так як при встановленні ширина боксу весь інший простір 
+    заповнився "нічим". */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* стандартний селектор для центрації контенту строніки */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  /* альтернативний варіант того самого результату */
+  /* 0 - вертикальний, auto горизонтальний */
+  /* margin: 0 auto; */
+}

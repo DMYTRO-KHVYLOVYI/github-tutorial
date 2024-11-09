@@ -1,4 +1,4 @@
- /* УЗАГАЛЬНЕННЯ
+/* УЗАГАЛЬНЕННЯ
  якщо у нас є щось однакове по зовнішньому виду, але
  розрізняється за дрібними модифікаціями то використовується
  "базовий стиль" + "додатковий" який його модифікує
@@ -54,6 +54,14 @@ body {
   h6 {
     font-family: Comfortaa;
   } */
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1440px;
+  background-color: blanchedalmond;
+  outline: 2px solid slateblue;
 }
 
 /* Logo */
@@ -140,7 +148,6 @@ font-family: inherit;
           <li><a href="" class="link">Support</a></li>
         </ul> */
 
-
 /* 
 
 ul {
@@ -203,6 +210,14 @@ ul {
 .button {
   color: var(--title-text-color);
   background-color: var(--primary-white-color);
+  padding: 11px 34px;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: center;
+  min-width: 130px;
+  /* min-width це мінімальна ширина елемента , яка у разі додавання
+  контенту (у нашому випадку тексту) робить елемент ширшим, а не
+  переносить текст на інший рядок */
 
   font-weight: 500;
   font-size: 15px;
@@ -210,15 +225,18 @@ ul {
   text-decoration: none;
 }
 
+
+.button.secondary {
+  color: var(--accent-color);
+  background-color: var(--primary-white-color);
+  border: 1px solid var(--accent-color);
+}
+
 .button.primary {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
 
-.button.secondary {
-  color: var(--accent-color);
-  background-color: var(--primary-white-color);
-}
 
 /* Footer */
 
@@ -231,4 +249,3 @@ ul {
   font-size: 15px;
   line-height: 1.6;
 }
-

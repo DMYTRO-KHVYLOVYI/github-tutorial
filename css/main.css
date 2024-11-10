@@ -16,6 +16,7 @@
   --title-text-color: #000000;
   --accent-color: #18a0fb;
   --primary-white-color: #ffffff;
+  --secondary-bg-color: #F5F5F5;
 }
 
 body {
@@ -59,8 +60,11 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* лівий та правий padding даються щоб уникнути склеювання тексту та
+  бокової рамки сторінки. Щоб між контентом та рамкою браузера був відступ */
   width: 1440px;
-  background-color: blanchedalmond;
   outline: 2px solid slateblue;
 }
 
@@ -148,23 +152,43 @@ font-family: inherit;
           <li><a href="" class="link">Support</a></li>
         </ul> */
 
-/* 
+/* ul {
+  list-style: none;
+} */
 
-ul {
-    list-style: none;
-}
-
- цим варіантом можна знести стиль сторінки (крапочки)
+/* цим варіантом можна знести стиль сторінки (крапочки)
  з усіх ul елементів та у разі небхіодності додавати окремо,
  але наступний варіант більш гнучкий */
 
 .list {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+} */
+/* приклад знесення зайвих (встановлених брузером) margin */
+
 /* Hero */
 
+.hero {
+  text-align: center;
+  /* всі текстові елементи блока успадковують центровку */
+}
+
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  /* зробили відступ заголовка від кнопки */
   color: var(--title-text-color);
   font-weight: 400;
   font-size: 56px;
@@ -179,16 +203,45 @@ ul {
 
 /* Section */
 
+.section {
+  /* Простір між секціями заповнюється padding а не margin
+  щоб між ними не було білих зазорів */
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* Прибрали padding секції щоб він не відштовхував її від секції вище */
+/* Тобто для секції вище ми зробили padding для того щоб відповідно
+до макету її дистанціювати від контенту вище без допомоги margin тому що той
+не можна зафарбувати, а для данної секції ми падінг прибираймо
+ щоб він не створював зайву дистанцію */
+.section.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .section-title {
   color: var(--title-text-color);
 
   font-weight: 400;
   font-size: 48px;
   line-height: 1.5;
+  /* можна центрувати всі потрібні заголовки 
+  text-align: center; */
+
+  margin-top: 0;
+  margin-bottom: 60px;
+  /* зробили відступ (відповідно до відступу на макеті) */
+}
+
+/* А можна центрувати елементи окремо */
+.section-title.centered {
   text-align: center;
 }
 
 .section-description {
+  margin-top: 0;
+  margin-bottom: 80px;
   font-size: 36px;
   line-height: 1.39;
 }
@@ -199,10 +252,32 @@ ul {
 .feature-list .title,
 .work-list .title {
   color: var(--title-text-color);
+  margin-bottom: 24;
+  margin-top: 0;
 
   font-weight: 700;
   font-size: 24px;
   line-height: 1.5;
+}
+
+/* Works */
+/* стрілочку поставили щоб зрозуміти що це селектор з ul на li */
+/* тобто посилання з вкладення на вкладення */
+.work-list > .item {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--primary-white-color);
+}
+
+/* принцип an+b (дивитись в read) */
+.work-list > .item:nth-child(2n) {
+  background-color: var(--secondary-bg-color)
+  /* УВАГА режим екрану комфорт для глаз не бачить синій колір */
+}
+
+.feature-list p {
+  margin-top: 0;
+  margin-bottom: 32px;
 }
 
 /* Button */
@@ -210,6 +285,9 @@ ul {
 .button {
   color: var(--title-text-color);
   background-color: var(--primary-white-color);
+  /* додаємо до кнопок прозорий border для того щоб кнопки з кольоровим
+  border не були більшими (в пікселях) за інші */
+  border: 1px solid transparent;
   padding: 11px 34px;
   border-radius: 6px;
   display: inline-block;
@@ -225,18 +303,16 @@ ul {
   text-decoration: none;
 }
 
-
 .button.secondary {
   color: var(--accent-color);
   background-color: var(--primary-white-color);
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .button.primary {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
-
 
 /* Footer */
 
